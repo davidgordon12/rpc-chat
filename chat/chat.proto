@@ -7,11 +7,25 @@ option java_outer_classname = "ChatProto";
 
 package chat;
 
-service Messenger {
-    rpc SendMessage (Message) returns (Message) {}
+message User {
+    string client_id = 1;
+    string name = 2;
 }
 
 message Message {
     string client_id = 1;
     string value = 2;
+    string timestamp = 3;
+}
+
+message Connect {
+    User user = 1;
+    bool active = 2;
+}
+
+message Close {}
+
+service Broadcast {
+    rpc CreateStream(Connect) returns (stream Message);
+    rpc BroadcastMessage(Message) returns (Close);
 }
