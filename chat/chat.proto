@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "github.com/davidgordon12/rpc-chat;rpc_chat";
+option java_multiple_files = true;
+option java_package = "io.grpc.davidgordon12.chat";
+option java_outer_classname = "ChatProto";
+
+package chat;
+
+service Messenger {
+    rpc SendMessage (Message) returns (Message) {}
+}
+
+message Message {
+    string client_id = 1;
+    string value = 2;
+}
