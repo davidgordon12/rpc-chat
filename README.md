@@ -6,4 +6,4 @@ To get started;
 - Interact via the CLI, press enter to send a message to be broadcast amongst each client.
 - Connect as many clients as you want.
 
-### Demo -> ...
+### Demo -> https://www.youtube.com/watch?v=d6dI_W2ndRo
